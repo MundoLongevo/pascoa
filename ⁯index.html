@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Páscoa | As Passagens do Impossível — Ricardo de Faria Barros</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0c0703;
+        }
+
+        /* estrutura principal */
+        .pw {
+            background: #0e0a06;
+            color: #f0ddb8;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, 'Times New Roman', serif;
+            padding-bottom: 5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .cnt {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* tipografia refinada */
+        .intro {
+            font-size: 1.22rem;
+            line-height: 2.05;
+            margin: 2.5rem 0 2rem;
+            font-weight: 350;
+        }
+        .intro p {
+            margin-bottom: 0.9rem;
+        }
+
+        .lista {
+            border-left: 3px solid #dc9e44;
+            padding-left: 1.6rem;
+            margin: 2rem 0;
+            color: #dbb067;
+            font-style: italic;
+            line-height: 2.1;
+            font-size: 1.05rem;
+            background: linear-gradient(90deg, rgba(220,158,68,0.05) 0%, rgba(0,0,0,0) 100%);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .story {
+            background: #1f130b;
+            border: 1px solid #4d2a14;
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+            margin: 2.8rem 0;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,245,200,0.05);
+            transition: transform 0.2s ease;
+        }
+        .story:hover {
+            transform: translateY(-3px);
+        }
+        .year {
+            font-size: 4rem;
+            color: #e7b155;
+            font-weight: 320;
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 2px 2px 0 #2a1508;
+        }
+        .st p {
+            font-size: 1.02rem;
+            line-height: 1.9;
+            color: #eedbba;
+            margin-bottom: 0.85rem;
+        }
+
+        .quote {
+            font-size: 1.32rem;
+            color: #e0a85c;
+            font-style: italic;
+            text-align: center;
+            padding: 2rem 1.8rem;
+            line-height: 1.85;
+            font-weight: 320;
+            border-top: 1px solid #3e2616;
+            border-bottom: 1px solid #3e2616;
+            margin: 2.5rem 0;
+            background: rgba(200, 145, 58, 0.02);
+            border-radius: 32px;
+        }
+
+        .bd p {
+            font-size: 1.08rem;
+            line-height: 1.92;
+            margin-bottom: 1rem;
+            color: #f7e9cf;
+        }
+
+        .inv {
+            text-align: center;
+            color: #dcab6b;
+            font-style: italic;
+            padding: 1.5rem 0;
+            line-height: 2.3;
+            font-size: 1.12rem;
+            background: #160e08;
+            border-radius: 64px;
+            margin: 2rem 0;
+        }
+        .inv p {
+            margin-bottom: 0.2rem;
+        }
+
+        .tapioca {
+            color: #e7b155;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.28rem;
+            padding: 1.2rem 0;
+            font-weight: 400;
+            letter-spacing: -0.2px;
+            background: radial-gradient(ellipse at center, #241708 10%, #0e0a06 80%);
+            border-radius: 60px;
+            margin: 2rem 0;
+        }
+
+        .dots {
+            text-align: center;
+            color: #c28a3e;
+            opacity: 0.55;
+            letter-spacing: 0.9em;
+            padding: 1.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .bless {
+            text-align: center;
+            border-top: 1px solid #4d301e;
+            padding-top: 2.2rem;
+            margin-top: 2.5rem;
+        }
+        .bm {
+            font-size: 1.65rem;
+            color: #e7b155;
+            font-weight: 320;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.6rem;
+            font-family: Georgia, serif;
+        }
+        .bs {
+            font-size: 1rem;
+            color: #b27d46;
+            letter-spacing: 0.12em;
+        }
+
+        .sig {
+            text-align: right;
+            color: #b27d46;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+            border-top: 1px dashed #3c2a1c;
+            padding-top: 1.2rem;
+            font-family: 'Palatino Linotype', serif;
+        }
+
+        /* nova arte SVG totalmente repaginada, mais rica e simbólica */
+        .hero-art {
+            width: 100%;
+            background: #0e0a06;
+            border-bottom: 1px solid #37200f;
+        }
+
+        .hero-svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #0e0a06;
+        }
+
+        /* elementos de fumaça / pó dourado sutis */
+        .gold-dust {
+            position: absolute;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        @media (max-width: 560px) {
+            .cnt {
+                padding: 0 1.2rem;
+            }
+            .intro {
+                font-size: 1.1rem;
+            }
+            .story {
+                padding: 1.5rem;
+            }
+            .year {
+                font-size: 2.8rem;
+            }
+            .quote {
+                font-size: 1.15rem;
+                padding: 1.2rem;
+            }
+            .bm {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* animação suave para as brasas e luz */
+        @keyframes gentleGlow {
+            0% { opacity: 0.6; filter: blur(2px);}
+            100% { opacity: 0.95; filter: blur(0px);}
+        }
+        .glow-effect {
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+<div class="pw">
+    <!-- ARTE COMPLETAMENTE RENOVADA, SIMBÓLICA: fogo da travessia + céu estrelado + caminho que se abre -->
+    <div class="hero-art">
+        <svg class="hero-svg" viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <linearGradient id="gradSky" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#0f0b07" />
+                    <stop offset="70%" stop-color="#18100a" />
+                    <stop offset="100%" stop-color="#221709" />
+                </linearGradient>
+                <radialGradient id="fireGlow" cx="50%" cy="70%" r="60%">
+                    <stop offset="0%" stop-color="#e68a2e" stop-opacity="0.7" />
+                    <stop offset="100%" stop-color="#c15118" stop-opacity="0" />
+                </radialGradient>
+                <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                    <feMerge>
+                        <feMergeNode in="offsetblur" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+            <rect width="1000" height="360" fill="url(#gradSky)" />
+            <!-- estrelas refinadas, mais densas e com brilho -->
+            <g opacity="0.9">
+                <circle cx="124" cy="48" r="1.8" fill="#fcf3cf" />
+                <circle cx="212" cy="32" r="1.2" fill="#ffe3a0" />
+                <circle cx="302" cy="61" r="2" fill="#fff2cf" />
+                <circle cx="402" cy="28" r="1.4" fill="#ffe7b5" />
+                <circle cx="527" cy="44" r="1.5" fill="#fce6b0" />
+                <circle cx="612" cy="23" r="1.6" fill="#fff0c4" />
+                <circle cx="718" cy="52" r="1.3" fill="#ffefbe" />
+                <circle cx="822" cy="37" r="2.2" fill="#ffe9b0" />
+                <circle cx="903" cy="68" r="1.5" fill="#f7e2a4" />
+                <circle cx="56" cy="84" r="1.3" fill="#ffdd9e" />
+                <circle cx="448" cy="91" r="1.1" fill="#fad78e" />
+                <circle cx="760" cy="82" r="1.7" fill="#ffd995" />
+                <circle cx="282" cy="98" r="1.1" fill="#ffe4ac" />
+                <circle cx="524" cy="108" r="1.2" fill="#feda94" />
+                <circle cx="946" cy="44" r="1.6" fill="#ffe6b2" />
+                <circle cx="170" cy="118" r="1.3" fill="#fbe2a6" />
+                <circle cx="666" cy="124" r="1.2" fill="#ffdea0" />
+                <!-- estrelas distantes -->
+                <circle cx="368" cy="140" r="1" fill="#f2cf87" opacity="0.6" />
+                <circle cx="480" cy="155" r="1" fill="#efcd86" opacity="0.5" />
+                <circle cx="815" cy="131" r="1.2" fill="#f8da9c" opacity="0.7" />
+                <circle cx="58" cy="162" r="1" fill="#f7da96" opacity="0.55" />
+                <circle cx="910" cy="158" r="1.4" fill="#ffecb3" opacity="0.8" />
+            </g>
+            <!-- lua crescente simbolizando travessia noturna -->
+            <path d="M 860 62 Q 842 38 820 46 Q 838 50 846 72 Q 854 94 872 84 Q 868 70 860 62" fill="#f7eac5" opacity="0.95" />
+            <path d="M 866 70 Q 852 54 837 62 Q 848 64 852 78 Q 859 89 870 82 Q 868 75 866 70" fill="#fff1cf" opacity="0.8" />
+            
+            <!-- mar simbólico que se abre (águas) -->
+            <g opacity="0.45">
+                <path d="M 0 280 L 1000 260 L 1000 330 L 0 350 Z" fill="#17100b" />
+                <path d="M 0 295 L 240 282 L 500 290 L 760 275 L 1000 268 L 1000 315 L 0 325 Z" fill="#2b1e13" opacity="0.6" />
+                <path d="M 80 292 L 300 284 L 550 294 L 830 280 L 980 275" stroke="#c8913a" stroke-width="1.2" stroke-dasharray="5 4" fill="none" opacity="0.7"/>
+            </g>
+
+            <!-- fogo da travessia / brasa central: símbolo da páscoa que transforma -->
+            <circle cx="500" cy="210" r="48" fill="url(#fireGlow)" />
+            <circle cx="500" cy="210" r="35" fill="#dc7720" opacity="0.7" />
+            <circle cx="500" cy="210" r="23" fill="#f5952e" />
+            <circle cx="500" cy="210" r="12" fill="#ffb658" />
+            <animate attributeName="r" values="12;14;12" dur="3s" repeatCount="indefinite" xlink:href="#fireCore" />
+            <circle id="fireCore" cx="500" cy="210" r="10" fill="#ffcf80" />
+
+            <!-- labaredas estilizadas -->
+            <path d="M 476 182 L 466 152 L 486 162 L 494 142 L 504 156 L 522 148 L 512 174 L 538 184 L 512 192 L 524 218 L 500 202 L 478 218 L 490 188 Z" fill="#e57a1e" opacity="0.7" />
+            <path d="M 488 176 L 482 160 L 496 170 L 500 152 L 508 166 L 522 158 L 514 176 L 530 182 L 514 188 L 522 202 L 500 190 L 480 202 L 488 184 Z" fill="#ff9430" opacity="0.9" />
+            
+            <!-- pessoas silhuetas: travessia (caminhantes) -->
+            <g opacity="0.85">
+                <circle cx="720" cy="288" r="5" fill="#ebc27a" />
+                <rect x="718" y="293" width="4" height="18" fill="#b8823a" />
+                <line x1="716" y1="306" x2="707" y2="316" stroke="#c68f47" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="724" y1="306" x2="732" y2="317" stroke="#c68f47" stroke-width="2.5"/>
+                <circle cx="280" cy="292" r="5" fill="#deb96b" />
+                <rect x="278" y="297" width="4" height="18" fill="#aa7236" />
+                <line x1="276" y1="312" x2="267" y2="324" stroke="#bd8748" stroke-width="2.3"/>
+                <line x1="284" y1="312" x2="292" y2="324" stroke="#bd8748"/>
+                <circle cx="410" cy="295" r="4.5" fill="#eacb89" />
+                <rect x="408" y="300" width="4" height="16" fill="#b27b40" />
+                <circle cx="590" cy="291" r="5" fill="#e7bf74" />
+                <rect x="588" y="296" width="4" height="18" fill="#bc8546" />
+            </g>
+            
+            <!-- cruz leve: ressurreição / passagem, símbolo sagrado integrado com suavidade -->
+            <g opacity="0.5">
+                <line x1="500" y1="134" x2="500" y2="180" stroke="#dc9e44" stroke-width="1.6" stroke-linecap="round" />
+                <line x1="476" y1="156" x2="524" y2="156" stroke="#dc9e44" stroke-width="1.6" />
+            </g>
+            
+            <!-- caminho de luz no chão: "a passagem se abre" -->
+            <rect x="0" y="324" width="1000" height="36" fill="#110c07" />
+            <path d="M 0 340 L 1000 332 L 1000 348 L 0 356 Z" fill="#2a1d10" opacity="0.8" />
+            <path d="M 120 338 L 280 334 L 490 342 L 720 336 L 880 333" stroke="#e7b155" stroke-width="1.8" stroke-dasharray="7 6" fill="none" opacity="0.9" />
+            
+            <!-- texto principal integrado ao SVG (título elegante) -->
+            <text x="500" y="50" text-anchor="middle" font-family="Palatino Linotype, Georgia, serif" font-size="42" font-weight="350" fill="#e3b36b" letter-spacing="8">PÁSCOA</text>
+            <text x="500" y="86" text-anchor="middle" font-family="Palatino Linotype, serif" font-size="14" fill="#b98648" letter-spacing="3.5">AS PASSAGENS DO IMPOSSÍVEL</text>
+            <line x1="340" y1="105" x2="660" y2="105" stroke="#c8913a" stroke-width="0.8" opacity="0.5" />
+        </svg>
+    </div>
+    
+    <div class="cnt">
+        <div class="intro">
+            <p>Existe um tipo de passagem que a gente compra sem dinheiro.</p>
+            <p>Não tem balcão, não tem fila, não tem guichê. Mas tem destino. Tem coragem. Tem a fé de que do outro lado da margem, algo de bom aguarda.</p>
+            <p>São as páscoas do cotidiano.</p>
+        </div>
+
+        <div class="lista">
+            A passagem do desemprego para o emprego. Da vida profissional corrida para o descanso merecido da aposentadoria. Dos dias de leito de hospital para a alta — aquela porta que se abre como uma aurora. Da vida de solteiro para a de casado. Dos bancos escolares para a colação de grau. Dos dias longos da gravidez para o primeiro choro de uma vida nova no mundo.
+        </div>
+
+        <div class="bd">
+            <p>Cada uma dessas travessias é uma Páscoa. Libertadora. Cheia de promessas. Carregada de esperança de que o mundo pode ser diferente — e melhor — do outro lado.</p>
+            <p>São as passagens do impossível.</p>
+        </div>
+
+        <div class="quote">"Porque longe é um lugar que não existe<br>para um coração em Páscoa."</div>
+
+        <div class="story">
+            <div class="year">1996</div>
+            <div class="st">
+                <p>Vivi uma das páscoas mais bonitas da minha vida.</p>
+                <p>Não foi numa igreja, nem numa mesa farta. Foi numa rodoviária, perto da meia-noite, em João Pessoa.</p>
+                <p>Eu esperava meus filhos chegarem no último ônibus de Campina Grande, quando vi uma mulher com três filhos, vinda do sertão. Na cabeça, uma caixa de papelão. Numa mão, uma mala simples. Na outra, o filho menor.</p>
+                <p>O guichê estava fechado.</p>
+                <p>E ali, no chão duro, ela fez algo que nunca esqueci.</p>
+                <p>Tirou pedaços de papelão, forrou o chão, acomodou os filhos, repartiu biscoitos e, por fim, penteou o cabelo deles com uma delicadeza que só o amor conhece.</p>
+                <p>Enquanto eles dormiam, ela permanecia acordada, acariciando seus cabelos.</p>
+                <p>Ela não tinha passagem comprada para o dia seguinte. Mas tinha o que nenhuma companhia vende: a certeza silenciosa de que ia passar.</p>
+            </div>
+        </div>
+
+        <div class="bd">
+            <p>Ali entendi. A Páscoa não está só nos livros sagrados. Ela acontece nas travessias.</p>
+            <p>A dos judeus foi a libertação — um povo inteiro cruzando o mar que teimava em dizer não. A dos cristãos, a Ressurreição de Jesus Cristo — a maior das passagens, da morte para a vida, do silêncio do túmulo para o espanto da manhã.</p>
+            <p>Mas existem também as páscoas miúdas, as do dia a dia. As que ninguém fotografa, mas que mudam tudo.</p>
+        </div>
+
+        <div class="quote">
+            Um coração em Páscoa acredita que o impossível pode ser atravessado.<br><br>
+            Que depois da dor vem alívio.<br>
+            Que depois da noite vem o dia.<br>
+            Que a vida pode virar.
+        </div>
+
+        <div class="bd">
+            <p style="text-align:center">Às vezes o mar parece fechado. Mas ele se abre.</p>
+            <p style="text-align:center;font-size:1.28rem;color:#e7b155;font-style:italic;margin-top:-0.2rem">E a gente passa.</p>
+        </div>
+
+        <div class="dots">· · ·</div>
+
+        <div class="inv">
+            <p>O que, neste domingo, será Páscoa em sua vida?</p>
+            <p>O que, em você, pede Ressurreição?</p>
+            <p>Que passagem você está prestes a fazer?</p>
+        </div>
+
+        <div class="bd" style="text-align:center;margin-top:1.8rem">
+            <p>Que seja a vida. Que seja o vento.<br>Que sejam as velas abertas de um coração que ainda acredita.</p>
+        </div>
+
+        <div class="tapioca">✨ Porque um dia a tapioca vira ✨</div>
+
+        <div class="dots">· · ·</div>
+
+        <div class="bd" style="text-align:center">
+            <p>E mais do que viver a Páscoa… a gente pode <em>ser</em> Páscoa.</p>
+            <p>Pode ser cuidado. Pode ser acolhimento. Pode ser esperança.<br>Pode ser a mão que estende a passagem quando alguém não tem como comprar a sua.</p>
+            <p style="color:#b8884a;font-style:italic;font-size:1rem;margin-top:0.8rem">Às vezes, ser Páscoa é ser um pente, um biscoito, um pedaço de papelão…<br>ou apenas uma presença que aquece a noite de alguém que ainda está na travessia.</p>
+        </div>
+
+        <div class="bless">
+            <div class="bm">Feliz Páscoa. Siga. Mesmo devagar.</div>
+            <div class="bs">A travessia acontece.</div>
+        </div>
+
+        <!-- Assinatura final com destaque e data -->
+        <div class="sig">
+            — Ricardo de Faria Barros<br>
+            <span style="font-size:0.8rem; letter-spacing:1px;">Páscoa da Ressurreição · travessia que floresce</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
